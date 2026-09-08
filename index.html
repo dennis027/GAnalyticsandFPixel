@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SilkTech — Software, woven right</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- =========================================================
+       GOOGLE ANALYTICS (GA4) — embed the gtag.js snippet here.
+       This should go as early as possible in <head>, before
+       other scripts, so early pageviews aren't missed.
+
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+       <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'G-XXXXXXX');
+       </script>
+  ========================================================== -->
+
+  <!-- =========================================================
+       META (FACEBOOK) PIXEL — embed the pixel base code here.
+       Also goes in <head>. Google Tag Manager can house both
+       this and the GA snippet above instead, if you prefer
+       managing tags from one place.
+
+       <script>
+         !function(f,b,e,v,n,t,s)
+         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+         if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+         n.queue=[];t=b.createElement(e);t.async=!0;
+         t.src=v;s=b.getElementsByTagName(e)[0];
+         s.parentNode.insertBefore(t,s)}(window, document,'script',
+         'https://connect.facebook.net/en_US/fbevents.js');
+         fbq('init', 'YOUR_PIXEL_ID');
+         fbq('track', 'PageView');
+       </script>
+       <noscript><img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+       /></noscript>
+  ========================================================== -->
+  
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <span class="wordmark">SilkTech</span>
+      <nav class="nav">
+        <a href="#work">Work</a>
+        <a href="#stack">Analytics stack</a>
+        <a href="#contact" class="nav-cta">Get a quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow-thread"></p>
+          <h1>Interfaces that hold their thread<br>under real traffic.</h1>
+          <p class="lede">SilkTech builds and instruments web products for teams who
+            want to know exactly how people use what they ship — not guess at it.
+            This page is a working example, wired to track real visitor behaviour
+            with Meta Pixel and Google Analytics.</p>
+          <div class="hero-actions">
+            <button id="cta-primary" class="btn btn-primary" data-event="lead_cta_click">
+              Request a project quote
+            </button>
+            <button id="cta-secondary" class="btn btn-ghost" data-event="portfolio_view_click">
+              View sample work
+            </button>
+          </div>
+        </div>
+        <div class="hero-panel" aria-hidden="true">
+          <div class="thread-line"></div>
+          <div class="thread-line thread-line--slow"></div>
+          <div class="thread-line thread-line--slower"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="work">
+      <div class="wrap">
+        <h2>Recent SilkTech builds</h2>
+        <div class="card-grid">
+          <article class="proj-card" data-event="project_card_click" data-project="commerce-api">
+            <span class="proj-tag">Commerce</span>
+            <h3>Storefront &amp; order API</h3>
+            <p>A multi-tenant checkout and inventory system built for reliability
+              during flash sales, not just demo traffic.</p>
+          </article>
+          <article class="proj-card" data-event="project_card_click" data-project="field-ops">
+            <span class="proj-tag">Field ops</span>
+            <h3>Offline-first monitoring app</h3>
+            <p>A mobile app that keeps working when the connection doesn't,
+              then reconciles cleanly once it's back.</p>
+          </article>
+          <article class="proj-card" data-event="project_card_click" data-project="attack-surface">
+            <span class="proj-tag">Security</span>
+            <h3>Attack surface dashboard</h3>
+            <p>Continuous asset discovery and risk scoring for teams who'd
+              rather find the gap than read about it after.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="stack">
+      <div class="wrap stack-grid">
+        <div>
+          <h2>What's being tracked on this page</h2>
+          <p class="lede">This is a demo of analytics wiring, not a real store.
+            Two tools sit side by side here on purpose, so you can see how
+            each one picks up the same interactions differently.</p>
+        </div>
+        <div class="stack-cards">
+          <div class="stack-card">
+            <h3>Google Analytics (GA4)</h3>
+            <p>Tracks pageviews automatically, plus the custom events fired
+              below — button clicks, project card opens, and the newsletter
+              form. Look for the <code>gtag('event', …)</code> calls in
+              <code>script.js</code>.</p>
+          </div>
+          <div class="stack-card">
+            <h3>Meta (Facebook) Pixel</h3>
+            <p>Tracks the same moments as conversion signals for ad
+              targeting and retargeting — <code>Lead</code> on the quote
+              button, <code>ViewContent</code> on project cards. Look for
+              the <code>fbq('track', …)</code> calls in
+              <code>script.js</code>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2>Tell us about the build</h2>
+          <p class="lede">Submitting this form fires a conversion event on
+            both tools — a useful moment to instrument on a real site,
+            since it's the point a visitor becomes a lead.</p>
+        </div>
+        <form id="lead-form" class="lead-form" data-event="form_submit">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Wanjiru">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="jane@company.com">
+
+          <label for="project">What are you building?</label>
+          <textarea id="project" name="project" rows="3" placeholder="A quick line on the project..."></textarea>
+
+          <button type="submit" class="btn btn-primary">Send inquiry</button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>SilkTech — demo site for analytics instrumentation.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
